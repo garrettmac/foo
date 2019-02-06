@@ -48,5 +48,9 @@ workflow "Release" {
 
 action "Travis CI" {
   uses = "./travis-ci/"
-  secrets = ["GITHUB_TOKEN", "TRAVIS_TOKEN"]
-}
+  secrets = ["TRAVIS_TOKEN"]
+  # env = {
+  #   SLUG = "OWNER/REPO"
+  #   SITE = "org"
+  # }
+} # Filter for a new tag
