@@ -1,6 +1,6 @@
 workflow "Release" {
   on = "push"
-  resolves = ["action a"]
+  resolves = ["Travis CI"]
   # resolves = ["Trigger GitHub release"]
 }
 
@@ -46,10 +46,7 @@ workflow "Release" {
 #   resolves = [" Travis CI"]
 # }
 
-# action " Travis CI" {
-#   uses = "./.github/actions/travis-ci"
-#   secrets = ["GITHUB_TOKEN", "TRAVIS_TOKEN"]
-# }
-action "action a" {
+action "Travis CI" {
   uses = "./travis-ci/"
+  secrets = ["GITHUB_TOKEN", "TRAVIS_TOKEN"]
 }
