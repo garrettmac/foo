@@ -3,9 +3,10 @@ workflow "Travis CI" {
     resolves = ["Travis CI"]
   }
   
-  action "Travis CI" {
-    uses = "garrettmac/travis-ci-action@master"
-    secrets = ["TRAVIS_TOKEN"]
+  action "Trigger Travis CI" {
+    uses = "garrettmac/foo@master"
+    uses = "./.github/actions/travis-ci/"
+    secrets = [ "TRAVIS_TOKEN" ]
     env = {
       SLUG = "garrettmac/foo"
       SITE = "org"
