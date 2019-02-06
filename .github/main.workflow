@@ -4,7 +4,7 @@ workflow "Travis CI" {
   }
   action "Trigger Travis CI" {
     needs = "ACTION"
-    uses = "./actions/travis-ci"
+    uses = "./.github/actions/travis-ci"
     args = ""
     secrets = [ "TRAVIS_TOKEN" ]
     env = {

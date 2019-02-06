@@ -27,4 +27,4 @@ curl -sSf -X POST \
   -H "Travis-API-Version: 3" \
   -H "Authorization: token ${TRAVIS_TOKEN}" \
   -d "{\"request\": {${PAYLOAD}}}" \
-  https://api.travis-ci.${SITE}/repo/${OWNER}%2F${REPO}/requests
+  https://api.travis-ci.com/repo/${OWNER}%2F${REPO}/requests
