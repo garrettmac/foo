@@ -9,11 +9,11 @@ set -e
 # OWNER=${SLUG%%/*}
 # # REPO=${SLUG##*/}
 # REPO='foo'
-PAYLOAD=''
+# PAYLOAD=''
 
 
-if [ -z ${TRAVIS_TOKEN} ]; then
-  echo "Please set \$TRAVIS_TOKEN"
-  exit 1
-fi
+# if [ -z ${TRAVIS_TOKEN} ]; then
+#   echo "Please set \$TRAVIS_TOKEN"
+#   exit 1
+# fi
 
