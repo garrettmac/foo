@@ -1,11 +1,10 @@
 workflow "Travis CI" {
     on = "push"
-    resolves = ["Travis CI"]
+    resolves = ["Trigger Travis CI"]
   }
   action "Trigger Travis CI" {
     needs = "ACTION"
     uses = "./.github/actions/travis-ci"
-    args = ""
     secrets = [ "TRAVIS_TOKEN" ]
     env = {
       SLUG = "garrettmac/foo"
