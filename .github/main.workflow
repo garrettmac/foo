@@ -1,6 +1,6 @@
 workflow "Release" {
   on = "push"
-  resolves = ["Trigger GitHub release", "Travis CI"]
+  resolves = ["Trigger GitHub release"]
 }
 
 action "Trigger GitHub release" {
