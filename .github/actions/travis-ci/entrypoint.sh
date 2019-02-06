@@ -9,11 +9,18 @@ set -e
 # OWNER=${SLUG%%/*}
 # # REPO=${SLUG##*/}
 # REPO='foo'
-# PAYLOAD=''
+PAYLOAD=''
 
 
-# if [ -z ${TRAVIS_TOKEN} ]; then
-#   echo "Please set \$TRAVIS_TOKEN"
-#   exit 1
-# fi
+if [ -z ${TRAVIS_TOKEN} ]; then
+  echo "Please set \$TRAVIS_TOKEN"
+  exit 1
+fi
 
+curl -sSf -X POST \
+  -H "Content-Type: application/json" \
+  -H "Accept: application/json" \
+  -H "Travis-API-Version: 3" \
+  -H "Authorization: token ${TRAVIS_TOKEN}" \
+  -d "{\"request\": {${PAYLOAD}}}" \
+  https://api.travis-ci.com/repo/garrettmac%2Ffoo/requests

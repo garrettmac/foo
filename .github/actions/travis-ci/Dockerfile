@@ -1,9 +1,21 @@
+# FROM alpine
+
+# LABEL version="0.1.0"
+# LABEL repository="https://github.com/garrettmac/foo"
+
+# RUN apk add curl
+
+
+# COPY "entrypoint.sh" "/entrypoint.sh"
+# ENTRYPOINT ["/entrypoint.sh"]
+
+# CMD [""]
 
 FROM node:10
 
 LABEL "name" = "travis-ci"
 LABEL "version" = "0.0.1"
-
+LABEL "repository"="https://github.com/garrettmac/foo"
 LABEL "com.github.actions.name" = "Travis CI"
 LABEL "com.github.actions.description" = "Trigger a new GitHub release and generate the changelog using lerna-changelog."
 LABEL "com.github.actions.icon" = "tag"
