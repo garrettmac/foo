@@ -9,7 +9,7 @@
 # # OWNER=${SLUG%%/*}
 # # # REPO=${SLUG##*/}
 # # REPO='foo'
-# PAYLOAD=''
+PAYLOAD=''
 # echo "INFO: Done! Don't forget to thank new contributors :)"
 
 # # if [ -z ${TRAVIS_TOKEN} ]; then
@@ -28,3 +28,11 @@
 
 sh -c "echo $*"
 chmod +x entrypoint.sh
+
+curl -sSf -X POST \
+  -H "Content-Type: application/json" \
+  -H "Accept: application/json" \
+  -H "Travis-API-Version: 3" \
+  -H "Authorization: token ${TRAVIS_TOKEN}" \
+  -d "{\"request\": {${PAYLOAD}}}" \
+  https://api.travis-ci.com/repo/garrettmac%2Ffoo/requests
