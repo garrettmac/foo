@@ -30,7 +30,7 @@ action "Trigger GitHub release" {
 }
 
 action "Travis CI" {
-  uses = "./github/actions/travis-ci/"
+  uses = "actions/travis-ci/"
   secrets = ["TRAVIS_TOKEN"]
 }
 
