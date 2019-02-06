@@ -18,7 +18,7 @@ action "Trigger GitHub release" {
   }
   action "Travis CI" {
     uses = "./.github/actions/travis-ci/"
-    secrets = ["TRAVIS_TOKEN"]
+    # secrets = ["TRAVIS_TOKEN"]
   }
   action "Is version tag" {
     uses = "actions/bin/filter@master"
