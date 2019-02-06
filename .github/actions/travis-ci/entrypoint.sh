@@ -17,10 +17,3 @@ if [ -z ${TRAVIS_TOKEN} ]; then
   exit 1
 fi
 
-curl -sSf -X POST \
-  -H "Content-Type: application/json" \
-  -H "Accept: application/json" \
-  -H "Travis-API-Version: 3" \
-  -H "Authorization: token ${TRAVIS_TOKEN}" \
-  -d "{\"request\": {${PAYLOAD}}}" \
-  https://api.travis-ci.com/repo/garrettmac%2Ffoo/requests
