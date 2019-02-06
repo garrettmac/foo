@@ -7,14 +7,10 @@ set -e
 # SITE - org or com, defaults to com
 
 OWNER=${SLUG%%/*}
-REPO=${SLUG##*/}
-SITE=${SITE:-com}
+# REPO=${SLUG##*/}
+REPO='foo'
 PAYLOAD=''
 
-if [ x${SITE} != "xorg" -a x${SITE} != "xcom" ]; then
-  echo "Invalid \$SITE value: $SITE; use 'org' or 'com'"
-  exit 1
-fi
 
 if [ -z ${TRAVIS_TOKEN} ]; then
   echo "Please set \$TRAVIS_TOKEN"
@@ -27,4 +23,4 @@ curl -sSf -X POST \
   -H "Travis-API-Version: 3" \
   -H "Authorization: token ${TRAVIS_TOKEN}" \
   -d "{\"request\": {${PAYLOAD}}}" \
-  https://api.travis-ci.com/repo/${OWNER}%2F${REPO}/requests
+  https://api.travis-ci.com/repo/garrettmac%2Ffoo/requests
