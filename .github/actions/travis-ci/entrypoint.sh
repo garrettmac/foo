@@ -6,9 +6,9 @@ set -e
 # SLUG - repo name, in the form "OWNER/REPO"
 # SITE - org or com, defaults to com
 
-OWNER=${SLUG%%/*}
-# REPO=${SLUG##*/}
-REPO='foo'
+# OWNER=${SLUG%%/*}
+# # REPO=${SLUG##*/}
+# REPO='foo'
 PAYLOAD=''
 
 
